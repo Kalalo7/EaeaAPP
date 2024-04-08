@@ -9,6 +9,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -29,6 +30,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.eaeaapp2.ui.theme.Eaeaapp2Theme
 
 
@@ -69,8 +71,10 @@ fun BotonCentrado() {
         Button(onClick = {
             openDialog.value = true
             MediaPlayer.create(context, R.raw.sound_file).start()
-        }) {
-            Text(text = "EaeAPP")
+        },
+            modifier = Modifier.size(width = 200.dp, height =80.dp,)) {
+            Text(text = "EaeaAPP", fontSize = 22.sp)
+
         }
         if (openDialog.value) {
             AlertDialog(
